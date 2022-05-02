@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\BBQ\\source\\repos\\Webhooks\\airlineweb\\AirlineWeb.csproj": {}
+    "C:\\Users\\BBQ\\source\\repos\\Webhooks\\AirlineWeb\\AirlineWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\BBQ\\source\\repos\\Webhooks\\airlineweb\\AirlineWeb.csproj": {
+    "C:\\Users\\BBQ\\source\\repos\\Webhooks\\AirlineWeb\\AirlineWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BBQ\\source\\repos\\Webhooks\\airlineweb\\AirlineWeb.csproj",
+        "projectUniqueName": "C:\\Users\\BBQ\\source\\repos\\Webhooks\\AirlineWeb\\AirlineWeb.csproj",
         "projectName": "AirlineWeb",
-        "projectPath": "C:\\Users\\BBQ\\source\\repos\\Webhooks\\airlineweb\\AirlineWeb.csproj",
+        "projectPath": "C:\\Users\\BBQ\\source\\repos\\Webhooks\\AirlineWeb\\AirlineWeb.csproj",
         "packagesPath": "C:\\Users\\BBQ\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BBQ\\source\\repos\\Webhooks\\airlineweb\\obj\\",
+        "outputPath": "C:\\Users\\BBQ\\source\\repos\\Webhooks\\AirlineWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "F:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

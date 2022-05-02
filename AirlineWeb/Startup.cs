@@ -1,3 +1,4 @@
+using System;
 using AirlineWeb.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,13 +23,17 @@ namespace AirlineWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AirlineDbContext>(opt => opt.UseSqlServer
-                (Configuration.GetConnectionString("AirlineConnectionString")));
+                (Configuration.GetConnectionString("AirlineConnection")));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AirlineWeb", Version = "v1" });
             });
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
