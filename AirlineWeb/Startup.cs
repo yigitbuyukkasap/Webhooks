@@ -22,6 +22,21 @@ namespace AirlineWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            // cors
+            services.AddCors((options) =>
+            {
+                options.AddPolicy("airlineApplication", (builder) =>
+                {
+                    builder
+                    .WithOrigins("http://localhost:4200")
+                    .AllowAnyHeader()
+                    .WithMethods("GET", "POST", "PUT", "DELETE")
+                    .WithExposedHeaders("*");
+                });
+            });
+
+
             services.AddDbContext<AirlineDbContext>(opt => opt.UseSqlServer
                 (Configuration.GetConnectionString("AirlineConnection")));
 
@@ -49,6 +64,8 @@ namespace AirlineWeb
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
+
+            app.UseCors("airlineApplication");
 
             app.UseRouting();
 

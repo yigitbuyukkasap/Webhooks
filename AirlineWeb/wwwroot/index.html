@@ -59,4 +59,52 @@
       </div>
     </div>
   </body>
+
+  <script>
+    var registerButton = document.getElementById('register');
+    var statusLabel = document.getElementById('statusLabel');
+    var webhookURI = document.getElementById('webhook');
+    var webhookType = document.getElementById('webhooktype');
+    var successBox = document.getElementById('alertSuccess');
+    var dangerBox = document.getElementById('alertDanger');
+    var dangerMessage = document.getElementById('dangerMessage');
+    var successMessage = document.getElementById('successMessage');
+
+    successBox.style.display = 'none';
+    dangerBox.style.display = 'none';
+
+    registerButton.onclick = function () {
+      successBox.style.display = 'none';
+      dangerBox.style.display = 'none';
+
+      if (webhookURI.value == '') {
+        dangerMessage.innerHTML = 'Please Enter a URI';
+        dangerBox.style.display = 'block';
+      } else {
+        (async () => {
+          const rawResponse = await fetch(
+            'http://localhost:5000/api/WebhookSubscription',
+            {
+              method: 'post',
+              body: JSON.stringify({
+                webhookUri: webhookURI.value,
+                webhookType: webhookType.value,
+              }),
+              headers: {
+                'Content-Type': 'application/json',
+              }
+            }
+          );
+
+          const content = await rawResponse.json();
+
+          successMessage.innerHTML =
+            ' Webhook Registered please use secret:' +
+            content.secret +
+            'to valodate inbound request';
+          successBox.style.display = 'block';
+        })();
+      }
+    };
+  </script>
 </html>
