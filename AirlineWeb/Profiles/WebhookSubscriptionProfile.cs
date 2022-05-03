@@ -11,6 +11,9 @@ namespace AirlineWeb.Profiles
             // Source --> Target
             CreateMap<WebhookSubscriptionCreateDto, WebhookSubscription>();
             CreateMap<WebhookSubscription, WebhookSubscriptionReadDto>();
+            
+            CreateMap<FlightDetailCreateDto, FlightDetail>();
+            CreateMap<FlightDetail, FlightDetailReadDto>();
         }
     }
 }
