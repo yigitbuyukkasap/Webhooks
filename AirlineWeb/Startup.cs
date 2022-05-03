@@ -1,5 +1,6 @@
 using System;
 using AirlineWeb.Data;
+using AirlineWeb.MessageBus;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -47,6 +48,8 @@ namespace AirlineWeb
             });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            services.AddSingleton<IMessageBusClient, MessageBusClient>();
 
 
         }
