@@ -45,9 +45,9 @@
         <div class="form-group">
           <label for="webhooktype">Webhooktype</label>
           <select id="webhooktype" class="form-control">
-            <option>Price Change</option>
-            <option>Seat availability</option>
-            <option>Flight Delays & Disruptions</option>
+            <option value="pricechange">Price Change</option>
+            <option value="availability">Seat availability</option>
+            <option value="delays">Flight Delays & Disruptions</option>
           </select>
         </div>
       </div>
@@ -92,12 +92,10 @@
               }),
               headers: {
                 'Content-Type': 'application/json',
-              }
+              },
             }
           );
-
           const content = await rawResponse.json();
-
           successMessage.innerHTML =
             ' Webhook Registered please use secret:' +
             content.secret +

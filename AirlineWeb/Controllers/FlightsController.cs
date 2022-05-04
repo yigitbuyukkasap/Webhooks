@@ -92,7 +92,7 @@ namespace AirlineWeb.Controllers
                 }
                 else
                 {
-                    Console.WriteLine("Proce Not Change");
+                    Console.WriteLine("Price Not Change");
                 }
             }
             catch (System.Exception ex)

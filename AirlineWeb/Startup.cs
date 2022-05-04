@@ -30,7 +30,7 @@ namespace AirlineWeb
                 options.AddPolicy("airlineApplication", (builder) =>
                 {
                     builder
-                    .WithOrigins("http://localhost:4200")
+                    .WithOrigins("http://localhost:5000")
                     .AllowAnyHeader()
                     .WithMethods("GET", "POST", "PUT", "DELETE")
                     .WithExposedHeaders("*");
